@@ -28,6 +28,8 @@ public class MasteryTask_4_FileIO {
         FileManager fileManager = new FileManager();
         String expected = "The contents of a test file.\n";
         String fileContents = fileManager.getTextFromFile("out/testFile");
+        fileContents = fileContents.replace("\r", "");
+        
         assertEquals(expected, fileContents);
 
         Path path = FileSystems.getDefault().getPath("./src/resources/out/testFile.txt");
