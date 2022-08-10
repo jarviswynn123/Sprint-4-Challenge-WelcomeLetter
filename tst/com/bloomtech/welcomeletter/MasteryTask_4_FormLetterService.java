@@ -40,6 +40,7 @@ public class MasteryTask_4_FormLetterService {
         employeeService.sendFormToEmployeeWithId(employee.getId());
 
         String welcomeLetter = fileManager.getTextFromFile("out/WelcomeTestEmployee");
+        welcomeLetter = welcomeLetter.replace("\r", "");
         String expected = "Welcome to test company!\n" +
                 "\n" +
                 "Dear Test Employee,\n" +
