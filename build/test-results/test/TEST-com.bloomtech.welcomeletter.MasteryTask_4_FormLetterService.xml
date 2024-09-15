@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bloomtech.welcomeletter.MasteryTask_4_FormLetterService" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-15T21:43:40" hostname="DESKTOP-4J57K3Q" time="0.051">
+  <properties/>
+  <testcase name="generateFormLetter_returnsWelcomeLetter()" classname="com.bloomtech.welcomeletter.MasteryTask_4_FormLetterService" time="0.051"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
