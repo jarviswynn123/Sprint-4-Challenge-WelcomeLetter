@@ -1,3 +1,38 @@
 @startuml
 
+class Company {
+    - id : int
+    - String : country
+    - String : companyname
+}
+
+class Employee {
+    - id : int
+    - firstname : String
+    - lastname : String
+    - phonenumber : String
+    - email : String
+    - salary : int
+    - startdate : LocalDate
+    - role : Role
+    - company : Company
+}
+
+enum Role {
+    COORDINATOR
+    DATA
+    ENGINEERING
+}
+
+class EmployeeService {
+    - formLetterService : FormLetterService
+    - employeeRepository : EmployeeRepository
+
+    + EmployeeService(EmployeeRepository employeeRepository, FormLetterService formLetterService) :
+}
+
+Company --* Employee
+Employee . Role
+Employee --> EmployeeService
+
 @enduml
