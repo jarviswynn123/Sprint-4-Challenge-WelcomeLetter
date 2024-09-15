@@ -8,19 +8,40 @@ public class Company {
     private String country;
 
     //TODO: Replace with Builder Constructor
-    public Company(String companyname, String country) {
-        //Auto-generate an id
-        id = maxId;
-        maxId++;
 
-        //Initialize fields
-        this.companyname = companyname;
-        this.country = country;
+    public static CompanyBuilder builder() {
+        return new CompanyBuilder();
+    }
+    private Company(CompanyBuilder builder) {
+        this.companyname = builder.companyname;
+        this.country = builder.country;
     }
 
-    public static final class Builder {
+    public static final class CompanyBuilder {
         //TODO: Implement Builder Pattern
+        private static int maxId = 1;
+        private int id;
+
+        private String companyname;
+        private String country;
+        public CompanyBuilder() {
+            id = maxId;
+            maxId++;
+        }
+        public CompanyBuilder withCompanyname(String companynameToUse) {
+            this.companyname = companynameToUse;
+            return this;
+        }
+        public CompanyBuilder withCountry(String countryToUse) {
+            this.country = countryToUse;
+            return this;
+        }
+
+        public Company build() {
+            return new Company(this);
+        }
     }
+
 
     public int getId() {
         return id;
